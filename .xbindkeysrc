@@ -1,0 +1,138 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.6
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Examples of commands:
+
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+   XF86AudioLowerVolume
+
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+"bspc desktop -f '^1'"
+   alt + KP_1
+
+"bspc node -d '^1'"
+   shift + alt + KP_1
+
+
+"bspc desktop -f '^10'"
+   alt + KP_0
+
+"bspc node -d '^10'"
+   alt + shift + KP_0
+
+"bspc desktop -f '^1'"
+   alt + KP_1
+
+"bspc node -d '^1'"
+   alt + shift + KP_1
+
+"bspc desktop -f '^2'"
+   alt + KP_2
+
+"bspc node -d '^2'"
+   alt + shift + KP_2
+
+"bspc desktop -f '^3'"
+   alt + KP_3
+
+"bspc node -d '^3'"
+   alt + shift + KP_3
+
+"bspc desktop -f '^4'"
+   alt + KP_4
+
+"bspc node -d '^4'"
+   alt + shift + KP_4
+
+"bspc desktop -f '^5'"
+   alt + KP_5
+
+"bspc node -d '^5'"
+   alt + shift + KP_5
+
+"bspc desktop -f '^6'"
+   alt + KP_6
+
+"bspc node -d '^6'"
+   alt + shift + KP_6
+
+"bspc desktop -f '^7'"
+   alt + KP_7
+
+"bspc node -d '^7'"
+   alt + shift + KP_7
+
+"bspc desktop -f '^8'"
+   alt + KP_8
+
+"bspc node -d '^8'"
+   alt + shift + KP_8
+
+"bspc desktop -f '^9'"
+   alt + KP_9
+
+"bspc node -d '^9'"
+   alt + shift + KP_9
+
+#"xterm -geom 50x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+
+##################################
+# End of xbindkeys configuration #
+##################################

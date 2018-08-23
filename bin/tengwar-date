@@ -1,0 +1,72 @@
+#!/bin/bash
+
+#dow
+case $(date +%u) in
+      1)
+	DOW="t2{^hE"
+        ;;
+      2)
+	DOW="1\`MiR2hE"
+        ;;
+      3)
+	DOW="y2\$5iR2hE"
+        ;;
+      4)
+	DOW="36U82hE"
+        ;;
+      5)
+	DOW="e72%hE"
+        ;;
+      6)
+	DOW="81E6U2hE"
+        ;;
+      7)
+	DOW="82{&hE"
+        ;;
+      *)
+        ;;
+esac
+
+#month
+case $(date +%m) in
+      01)
+	MONTH="s5EE\`M7Dh"
+        ;;
+      02)
+	MONTH="ew\$7\`M7Dh"
+        ;;
+      03)
+	MONTH="t6Ea"
+        ;;
+      04)
+	MONTH="qE7j%"
+        ;;
+      05)
+	MONTH="thE"
+        ;;
+      06)
+	MONTH="s5&("
+        ;;
+      07)
+	MONTH="sj&h"
+        ;;
+      08)
+	MONTH="\`Cx&iU1"
+        ;;
+      09)
+	MONTH="8q\$1t\$w6R"
+        ;;
+      10)
+	MONTH="zY1w^6R"
+        ;;
+      11)
+	MONTH="5r^t\$w6R"
+        ;;
+      12)
+	MONTH="2iRt\$w6R"
+        ;;
+      *)
+        ;;
+esac
+
+echo "$DOW = $MONTH = `~/bin/tengwar-number $(date +%e)`"

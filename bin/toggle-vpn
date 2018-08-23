@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if ip tuntap show | grep --quiet -i tun; then
+	sudo systemctl stop vpn.service
+else
+	sudo systemctl start vpn.service
+fi

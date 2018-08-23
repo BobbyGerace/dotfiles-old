@@ -1,0 +1,15 @@
+*
+!*/
+
+!bin/**
+!.config/polybar/**
+!.config/bspwm/**
+!.config/compton/**
+!.config/dunst/**
+!.config/polybar/**
+!.config/rofi/**
+!.config/termite/**
+!.xinitrc
+!.Xresources
+!.xbindkeysrc
+!.gitignore

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+str=$1
+output=""
+for (( i=0; i<${#str}; i++ )); do
+  
+    case "${str:$i:1}" in
+      0)
+        char="ð"
+	;;
+      1)
+        char="ñ"
+	;;
+      2)
+        char="ò"
+	;;
+      3)
+        char="ó"
+	;;
+      4)
+        char="ô"
+	;;
+      5)
+        char="õ"
+	;;
+      6)
+        char="ö"
+	;;
+      7)
+        char="÷"
+	;;
+      8)
+        char="ø"
+	;;
+      9)
+        char="ù"
+	;;
+      *)
+	char="${str:$i:1}"
+        ;;
+    esac
+
+    output="$output$char"
+done
+
+echo "$output"

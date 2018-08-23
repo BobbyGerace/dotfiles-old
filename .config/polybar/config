@@ -1,0 +1,204 @@
+[bar/top]
+enable-ipc = true
+monitor = DisplayPort-0
+width = 100%
+height = 45 
+bottom = false
+padding-left = 0
+padding-right = 0
+
+background = #F22e3440
+foreground = #FFFFFF
+
+font-0 = "Noto Sans":style=Regular:size=14;1
+font-2 = Tengwar Annatar:fontformat=truetype:style=Regular:size=16;2
+font-1 = Font Awesome 5 Free:fontformat=truetype:size=18;3
+font-3 = Font Awesome 5 Free:fontformat=truetype:style=Solid:size=18;1
+font-4 = Font Awesome 5 Brands:fontformat=truetype:size=18;1
+font-5 = Noto Sans Symbols2:fontformat=truetype:size=16;3
+font-6 = Noto Sans:style=Bold:fontformat=truetype:size=12;0
+
+wm-name = topbar
+
+modules-left = bspwm
+modules-center = date
+modules-right = vpn pulseaudio time
+
+[bar/left]
+enable-ipc = true
+monitor = HDMI-0
+width = 100%
+height = 45 
+bottom = false
+padding-left = 0
+padding-right = 0
+
+background = #F22e3440
+foreground = #FFFFFF
+
+; Position of the system tray window
+; If empty or undefined, tray support will be disabled
+; NOTE: A center aligned tray will cover center aligned modules
+;
+; Available positions:
+;   left
+;   center
+;   right
+tray-position = right
+
+; If true, the bar will not shift its
+; contents when the tray changes
+tray-detached = false
+
+; Tray icon max size
+tray-maxsize = 16
+
+; Enable pseudo transparency
+; Will automatically be enabled if a fully transparent
+; background color is defined using `tray-background`
+;tray-transparent = false
+
+; Background color for the tray container
+; By default the tray container will use the bar
+; background color.
+; Note: 32 bit alpha blending is not supported.
+;tray-background = ${root.background}
+
+; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
+tray-offset-x = 0
+tray-offset-y = 0
+
+; Pad the sides of each tray icon
+tray-padding = 0
+
+; Scale factor for tray clients
+tray-scale = 1.0
+
+font-0 = "Noto Sans":style=Regular:size=14;1
+font-2 = Tengwar Annatar:fontformat=truetype:style=Regular:size=16;2
+font-1 = Font Awesome 5 Free:fontformat=truetype:size=18;1
+font-3 = Font Awesome 5 Free:fontformat=truetype:style=Solid:size=18;1
+font-4 = Font Awesome 5 Brands:fontformat=truetype:size=18;1
+font-5 = Noto Sans Symbols2:fontformat=truetype:size=16;1
+
+wm-name = leftbar
+
+modules-left = bspwmleft
+modules-right = time
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = false
+
+; Interval for volume increase/decrease (in percent points) (unreleased)
+; Default: 5
+interval = 5
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted = "🔇 mute"
+label-volume = %percentage:4%%
+label-muted-foreground = #bf616a
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+[module/vpn]
+type = custom/script
+exec = ~/bin/polybar-vpn
+label-font = 7
+format-padding = 4
+interval = 1
+click-left = ~/bin/toggle-vpn
+
+[module/date]
+type = custom/script
+exec = ~/bin/tengwar-date
+label-font = 3
+interval = 1
+click-left = gnome-calendar
+
+[module/time]
+type = custom/script
+exec = echo `date +"%I:%M %p"`
+format-padding = 4
+label-font = 1
+
+[module/power]
+exec = echo ⏻
+format-padding = 4
+type = custom/script
+click-left = ~/bin/rofi-power
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+
+format = <label-state> <label-mode>
+
+ws-icon-0 = VI;8z|G
+ws-icon-1 = VII;8r$5$
+ws-icon-2 = VIII;lRX1
+ws-icon-3 = IX;55%(
+ws-icon-4 = X;15$
+ws-icon-default = VI
+
+label-visible-font = 3
+label-focused-font = 3
+label-occupied-font = 3
+label-empty-font = 3
+
+label-focused = %icon%
+label-focused-foreground = #EBCB8B
+label-focused-background = #F21d232F
+label-focused-underline = #FF0000
+label-focused-padding = 5
+
+label-occupied = %icon%
+label-occupied-foreground = #FFFFFF
+label-occupied-padding = 5
+
+label-empty = %icon%
+label-empty-foreground = #FFFFFF
+label-empty-padding = 5
+
+[module/bspwmleft]
+type = internal/bspwm
+pin-workspaces = true
+
+format = <label-state> <label-mode>
+
+ws-icon-0 = I;5^(
+ws-icon-1 = II;1y`N 
+ws-icon-2 = III;37~V 
+ws-icon-3 = IV;e.Y6 
+ws-icon-4 = V;er%( 
+ws-icon-default = I 
+
+label-visible-font = 3
+label-focused-font = 3
+label-occupied-font = 3
+label-empty-font = 3
+
+label-focused = %icon%
+label-focused-foreground = #EBCB8B
+label-focused-background = #F21d232F
+label-focused-underline = #FF0000
+label-focused-padding = 5
+
+label-occupied = %icon%
+label-occupied-foreground = #FFFFFF
+label-occupied-padding = 5
+
+label-empty = %icon%
+label-empty-foreground = #FFFFFF
+label-empty-padding = 5

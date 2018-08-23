@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if ip tuntap show | grep --quiet -i tun; then
+	echo "%{F#a3be8c}VPN"
+else
+	echo "%{F#bf616a}VPN"
+fi

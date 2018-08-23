@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+# Suspend dunst and lock, then resume dunst when unlocked.
+#pkill -u $USER -USR1 dunst
+i3lock -n -t -i ~/Pictures/wallpaper-lock.png \
+    --insidecolor=00000000 --ringcolor=00000000 --line-uses-inside \
+    --keyhlcolor=00000055 --bshlcolor=d23c3dff --separatorcolor=00000000 \
+    --insidevercolor=373445AA --insidewrongcolor=d23c3dAA \
+    --ringvercolor=ffffff00 --ringwrongcolor=ffffff00 --ring-width=20 \
+    --radius=100 --veriftext="" --wrongtext="" --noinputtext="" --indicator 
+#pkill -u $USER -USR2 dunst
+
